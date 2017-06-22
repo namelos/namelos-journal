@@ -33,3 +33,14 @@ lazy val `journal-impl` = (project in file("journal-impl"))
   )
   .settings(lagomForkedTestSettings: _*)
   .dependsOn(`journal-api`)
+
+lazy val `front-end` = (project in file("front-end"))
+  .enablePlugins(PlayScala && LagomPlay)
+  .dependsOn(`journal-api`)
+  .settings(
+    libraryDependencies ++= Seq(
+      lagomScaladslServer,
+      macwire,
+      scalaTest
+    )
+  )

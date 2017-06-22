@@ -1,0 +1,3 @@
+GET / controllers.HomeController.index
+GET /counter/:id controllers.CounterController.show(id)
+POST /counter/:id controllers.CounterController.add(id)

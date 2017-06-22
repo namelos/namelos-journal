@@ -1,0 +1,8 @@
+@(value: Int, addForm: Form[Add])(implicit messages: Messages)
+
+@main {
+  <p>Your value is @value</p>
+  @helper.form(action = routes.CounterController.add("1")) {
+    @helper.inputText(addForm("n"))
+  }
+}

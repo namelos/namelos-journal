@@ -11,7 +11,7 @@ trait JournalService extends Service {
   def add(id: String): ServiceCall[Int, Done]
 
   def descriptor = {
-    named("counter")
+    named("journal")
       .withCalls(
         pathCall("/api/counter/:id", counter _),
         pathCall("/api/counter/:id", add _)
